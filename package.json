@@ -1,0 +1,99 @@
+{
+  "name": "face-mask-detection-system",
+  "version": "1.0.0",
+  "description": "Real-time AI-powered face mask detection system for public health compliance",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -l 8000",
+    "dev": "npx live-server --port=8000",
+    "build": "npm run minify",
+    "minify": "npx html-minifier --collapse-whitespace --remove-comments --minify-js --minify-css index.html -o dist/index.html",
+    "test": "npm run test:unit && npm run test:integration",
+    "test:unit": "jest tests/unit",
+    "test:integration": "jest tests/integration",
+    "lint": "eslint scripts/**/*.js",
+    "format": "prettier --write \"**/*.{js,html,css,md}\"",
+    "deploy": "gh-pages -d .",
+    "validate": "html-validate index.html"
+  },
+  "keywords": [
+    "face-mask",
+    "detection",
+    "ai",
+    "computer-vision",
+    "tensorflow",
+    "webrtc",
+    "public-health",
+    "covid-19",
+    "real-time",
+    "javascript"
+  ],
+  "author": "Your Name <your.email@example.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/face-mask-detection.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/face-mask-detection/issues"
+  },
+  "homepage": "https://yourusername.github.io/face-mask-detection",
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "dependencies": {
+    "@tensorflow/tfjs": "^4.2.0",
+    "@tensorflow/tfjs-node": "^4.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.35.0",
+    "prettier": "^2.8.4",
+    "jest": "^29.4.3",
+    "html-minifier": "^4.0.0",
+    "live-server": "^1.2.2",
+    "serve": "^14.2.0",
+    "gh-pages": "^5.0.0",
+    "html-validate": "^7.13.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "jest": {
+    "testEnvironment": "jsdom",
+    "setupFilesAfterEnv": ["<rootDir>/tests/setup.js"],
+    "testMatch": [
+      "**/tests/**/*.test.js"
+    ],
+    "collectCoverageFrom": [
+      "scripts/**/*.js",
+      "!scripts/**/*.min.js"
+    ]
+  },
+  "eslintConfig": {
+    "extends": ["eslint:recommended"],
+    "env": {
+      "browser": true,
+      "es2021": true
+    },
+    "parserOptions": {
+      "ecmaVersion": 12,
+      "sourceType": "module"
+    },
+    "rules": {
+      "no-console": "warn",
+      "no-unused-vars": "error",
+      "prefer-const": "error"
+    }
+  },
+  "prettier": {
+    "semi": true,
+    "trailingComma": "es5",
+    "singleQuote": true,
+    "printWidth": 80,
+    "tabWidth": 2
+  }
+}
